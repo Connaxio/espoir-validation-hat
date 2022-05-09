@@ -25,6 +25,6 @@ fp-info-cache
 *.xml
 *.csv
 
-espoir_validation_hat-backups/
+*-backups/
 build/
 out/

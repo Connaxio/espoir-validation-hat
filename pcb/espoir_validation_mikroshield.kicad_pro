@@ -33,9 +33,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 2.7,
-          "height": 2.7,
-          "width": 2.7
+          "drill": 0.0,
+          "height": 2.0,
+          "width": 2.0
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -44,8 +44,8 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "45_degree_only": false,
-          "min_clearance": 0.15239999999999998
+          "45_degree_only": true,
+          "min_clearance": 0.127
         }
       },
       "diff_pair_dimensions": [
@@ -56,14 +56,29 @@
         }
       ],
       "drc_exclusions": [
-        "copper_edge_clearance|131143360|37113394|f099f66a-27d1-428b-8793-785275e0739e|a403151e-e6cf-4db5-b24f-78cb4c9d3648",
-        "copper_edge_clearance|148415360|37113394|cb78afb8-554d-49f6-9543-b440f9923ec3|784e5037-8178-4c54-8257-e3ca3d0bd24b",
-        "copper_edge_clearance|148415360|98835394|d74696bf-3eaf-4b5d-860e-131d9c108487|7fdce8ca-c9ff-46f0-b1f7-57d3132c2dab",
-        "missing_courtyard|138430000|53340000|e2b22d76-e143-4484-909a-0d8ca7d9c9dc|00000000-0000-0000-0000-000000000000",
-        "missing_courtyard|138430000|54610000|022b5e8d-d627-477a-87c2-d4078bb95e81|00000000-0000-0000-0000-000000000000",
-        "silk_over_copper|127000000|64770000|584c482d-1251-462e-825c-3a0578bafc6d|f1536c37-7639-4e11-bd04-69515425db56",
-        "silk_over_copper|127000000|64770000|584c482d-1251-462e-825c-3a0578bafc6d|f36525db-fcf6-42a9-83f2-822c803fe90b",
-        "silk_over_copper|127000000|95250000|584c482d-1251-462e-825c-3a0578bafc6d|de318d54-9ecf-49a5-aa55-23b881ca3d37"
+        "missing_courtyard|137795000|86360000|64e9f124-0d79-4933-a143-dbf3245053c2|00000000-0000-0000-0000-000000000000",
+        "missing_courtyard|139700000|115570000|77179fa0-442b-42e5-8737-5f6de5ac6a46|00000000-0000-0000-0000-000000000000",
+        "missing_courtyard|139700000|121920000|acf49b98-f361-4f20-a2cd-e76f548026a2|00000000-0000-0000-0000-000000000000",
+        "missing_courtyard|139700000|123190000|acf49b98-f361-4f20-a2cd-e76f548026a2|00000000-0000-0000-0000-000000000000",
+        "silk_over_copper|127000000|104140000|6a3f13f5-e498-419b-ab2a-676535934e66|9a73acba-655a-48fe-85fd-1499922c9a25",
+        "silk_over_copper|127000000|104140000|6a3f13f5-e498-419b-ab2a-676535934e66|a1506004-9c58-4ea0-a745-5f93a1e52c01",
+        "silk_over_copper|127000000|106680000|6a3f13f5-e498-419b-ab2a-676535934e66|f9264190-c74c-407d-9b05-9cb215955eb8",
+        "silk_over_copper|127000000|124460000|6a3f13f5-e498-419b-ab2a-676535934e66|70e6a0a9-2443-4676-a515-ded7b0f3f50a",
+        "silk_over_copper|152400000|104140000|04664c98-3079-4790-9d86-e06b2b91a3b5|acbbc318-6af8-4f36-b063-0314e203f242",
+        "silk_over_copper|152400000|104140000|04664c98-3079-4790-9d86-e06b2b91a3b5|bcaba7f7-6a5f-482f-adc9-93b54e536b60",
+        "silk_over_copper|152400000|104140000|04664c98-3079-4790-9d86-e06b2b91a3b5|f804f186-0c3d-4943-83c2-5c60788bbf2b",
+        "silk_over_copper|152400000|106680000|04664c98-3079-4790-9d86-e06b2b91a3b5|a4109058-d0f9-4476-9d51-99470378d671",
+        "silk_over_copper|152400000|124460000|04664c98-3079-4790-9d86-e06b2b91a3b5|aaad0bb4-3c56-4045-b3db-f12e79966eb7",
+        "silk_over_copper|152400000|86360000|04664c98-3079-4790-9d86-e06b2b91a3b5|e3bf56bf-3f90-4da9-83a1-910e1b91c532",
+        "silk_over_copper|152400000|87630000|04664c98-3079-4790-9d86-e06b2b91a3b5|19b9a30e-4122-477d-a375-df8ec0c9e813",
+        "silk_over_copper|152400000|88900000|04664c98-3079-4790-9d86-e06b2b91a3b5|30ca767e-2ac9-418d-a304-2d69ce902789",
+        "silk_overlap|149860000|104140000|4e609e51-9f9a-4f72-bc44-e01e41c7eb8d|8039e5f2-9f78-45df-ace4-2e117898efbc",
+        "silk_overlap|149860000|104140000|4e609e51-9f9a-4f72-bc44-e01e41c7eb8d|bcaba7f7-6a5f-482f-adc9-93b54e536b60",
+        "silk_overlap|149860000|104140000|f804f186-0c3d-4943-83c2-5c60788bbf2b|8039e5f2-9f78-45df-ace4-2e117898efbc",
+        "silk_overlap|152400000|104140000|30ca767e-2ac9-418d-a304-2d69ce902789|acbbc318-6af8-4f36-b063-0314e203f242",
+        "silk_overlap|152400000|104140000|30ca767e-2ac9-418d-a304-2d69ce902789|bcaba7f7-6a5f-482f-adc9-93b54e536b60",
+        "silk_overlap|152400000|104140000|f804f186-0c3d-4943-83c2-5c60788bbf2b|acbbc318-6af8-4f36-b063-0314e203f242",
+        "silk_overlap|152400000|104140000|f804f186-0c3d-4943-83c2-5c60788bbf2b|bcaba7f7-6a5f-482f-adc9-93b54e536b60"
       ],
       "meta": {
         "version": 2
@@ -355,7 +370,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "espoir_validation_hat.kicad_pro",
+    "filename": "espoir_validation_mikroshield.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -441,10 +456,10 @@
   "text_variables": {
     "author": "Marc-Antoine Lalonde",
     "company": "Connaxio inc.",
-    "day": "26",
-    "month": "04",
-    "rev": "1.0.0",
-    "title": "Espoir Validation HAT",
+    "day": "08",
+    "month": "05",
+    "rev": "0.3.5",
+    "title": "Espoir Validation mikroShield",
     "year": "2022"
   }
 }
