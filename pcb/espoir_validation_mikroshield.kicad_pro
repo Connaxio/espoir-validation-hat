@@ -404,8 +404,8 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "../outputs/espoir_validation_hat.step",
-      "vrml": "../outputs/espoir_validation_hat.wrl"
+      "step": "../../../../Downloads/espoir_validation_mikroshield.step",
+      "vrml": "../../../../Downloads/espoir_validation_mikroshield.wrl"
     },
     "page_layout_descr_file": ""
   },
