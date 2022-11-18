@@ -49,6 +49,7 @@ uint8_t digital_io_pins[] = {
 		GPIO_NUM_15 };
 uint8_t analog_io_count = 5;
 uint8_t analog_io_pins[] = { GPIO_NUM_34, GPIO_NUM_36, GPIO_NUM_37, GPIO_NUM_38, GPIO_NUM_39 };
+//uint8_t analog_io_pins[] = { GPIO_NUM_36 };
 
 // List ADC input pins
 const uint8_t num_channels_adc1 = 5;
@@ -364,23 +365,27 @@ void validate_board(void *pvParameters) {
 
 				printf("Write ADC TP cal: %i\r\n", write_two_point_adc_cal);
 				if (write_two_point_adc_cal) {
-					if (err == ESP_OK) {
+					if (err == ESP_OK || err == ESP_ERR_EFUSE_REPEATED_PROG) {
 						err = esp_efuse_write_field_blob(ESP_EFUSE_ADC1_TP_LOW, &A1, 7);
 					}
-					if (err == ESP_OK) {
+					if (err == ESP_OK || err == ESP_ERR_EFUSE_REPEATED_PROG) {
 						err = esp_efuse_write_field_blob(ESP_EFUSE_ADC1_TP_HIGH, &B1, 9);
 					}
-					if (err == ESP_OK) {
+					if (err == ESP_OK || err == ESP_ERR_EFUSE_REPEATED_PROG) {
 						err = esp_efuse_write_field_blob(ESP_EFUSE_ADC2_TP_LOW, &A2, 7);
 					}
-					if (err == ESP_OK) {
+					if (err == ESP_OK || err == ESP_ERR_EFUSE_REPEATED_PROG) {
 						err = esp_efuse_write_field_blob(ESP_EFUSE_ADC2_TP_HIGH, &B2, 9);
 					}
-					if (err == ESP_OK) {
+					if (err == ESP_OK || err == ESP_ERR_EFUSE_REPEATED_PROG) {
 						esp_efuse_write_reg(EFUSE_BLK0,
 								(EFUSE_BLK0_RDATA3_REG - DR_REG_EFUSE_BASE) / sizeof(uint32_t),
 								EFUSE_RD_BLK3_PART_RESERVE);
 					}
+					if (err == ESP_ERR_EFUSE_REPEATED_PROG) {
+						err = ESP_OK;
+					}
+
 					printf("Burning ADC Two point fuse: %s\r\n", esp_err_to_name(err));
 				}
 
@@ -499,10 +504,10 @@ void validate_board(void *pvParameters) {
 
 	if (err == ESP_OK) {
 		/* Measure supply voltages */
-		float error_5V = (adc->getValue("ch1") * 6.1 - 5000) / 5000;
+		float error_5V = (adc->getValue("ch1") * 6.1 - 5000) / 5000;	// 6.1 = Resistor ratio
 		float error_3V3 = (adc->getValue("ch0") * 6.1 - 3300) / 3300;
 
-		if (abs(error_5V) > 0.05f || abs(error_3V3) > 0.01f) {
+		if (abs(error_5V) > 0.05f || abs(error_3V3) > 0.014142f) {	// Square sum of resistors error + regulator error
 			err = ESP_ERR_INVALID_STATE;
 		}
 

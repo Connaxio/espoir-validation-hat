@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "run_qc"
+version = "0.1.0"
+description = ""
+authors = ["ma-lalonde <marc@connaxio.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyserial = "^3.5"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+esptool = "^4.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
